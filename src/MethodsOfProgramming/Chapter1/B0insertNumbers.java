@@ -9,15 +9,27 @@ import java.util.Scanner;
  * @return arraylist of integer numbers inputed by user.
  */
 public class B0insertNumbers {
+    private ArrayList<Integer> numbers;
 
-    public ArrayList<Integer> getNumbers(){
+    public B0insertNumbers(){
         System.out.print("Введите числа, для выхода используйте q:");
-        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         while (scan.hasNextInt()) {
             int num = scan.nextInt();
             numbers.add(num);
         }
+    }
+
+    public ArrayList<Integer> getNumbers(){
         return numbers;
+    }
+
+    public int[] getNumbersArray(){
+        int[] numbersArray = new int[numbers.size()];
+        for (int i = 0; i < numbers.size(); i++){
+            numbersArray[i] = numbers.get(i);
+        }
+        return numbersArray;
     }
 }
