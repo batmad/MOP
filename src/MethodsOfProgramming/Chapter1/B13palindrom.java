@@ -7,9 +7,20 @@ import java.util.ArrayList;
  * Класс находитчисла палиндромы - зеркальные числа из введенного массива
  */
 public class B13palindrom {
+    private ArrayList<Integer> numbers;
     public static void main(String[] args) {
         B0insertNumbers insertNumbers = new B0insertNumbers();
         ArrayList<Integer> numbers = insertNumbers.getNumbers();
+        B13palindrom palindrom = new B13palindrom(numbers);
+        ArrayList<Integer> result = palindrom.getPalindrom();
+        B0print message = new B0print();
+        message.print(" Список цифр: " + result.toString());
+    }
+    public B13palindrom(ArrayList<Integer> numbers){
+        this.numbers = numbers;
+    }
+
+    public ArrayList<Integer> getPalindrom(){
         ArrayList<Integer> result = new ArrayList<>();
         int inputCopy;
         boolean isPalindrom;
@@ -31,7 +42,6 @@ public class B13palindrom {
                 result.add(input);
             }
         }
-        B0print message = new B0print();
-        message.print(" Список цифр: " + result.toString());
+        return  result;
     }
 }
